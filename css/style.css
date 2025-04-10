@@ -1,0 +1,114 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.95em;
+}
+
+h2 {
+    text-align: center;
+}
+
+li {
+    margin-top: 20px;
+}
+
+img {
+    border: 5px solid blue;
+    border-radius: 35px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+figure {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+.label {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 150px;
+    /* Set a maximum width for the container */
+    white-space: normal;
+    /* Allows text to break onto new lines */
+    word-wrap: break-word;
+    /* Breaks long words if needed */
+    overflow-wrap: break-word;
+    /* Ensures text wraps consistently */
+}
+
+.grid {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+@media screen and (min-width: 772px) {
+    .grid {
+        grid-template-columns: 40% 40%;
+        justify-content: space-around;
+    }
+
+    img {
+        border-radius: 1000px;
+    }
+
+    figure {
+        border-radius: 1000px;
+    }
+
+    .grid> :last-child {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .grid> :nth-child(3n) {
+        grid-column: span 2;
+    }
+
+    img {
+        border-radius: 0px;
+    }
+
+    figure {
+        border-radius: 0px;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    figure {
+        background-color: black;
+        color: beige;
+    }
+
+    figure img {
+        border: 5px solid black;
+    }
+}
